@@ -1,4 +1,4 @@
-🧬 SpliceAI Interpretability via Transcriptome Perturbation
+## 🧬 SpliceAI Interpretability via Transcriptome Perturbation
 This project investigates what SpliceAI learns about splicing by introducing controlled perturbations to transcript sequences. Rather than treating SpliceAI as a black box, we use synthetic transcriptomes to dissect the sequence-level signals that drive its predictions.
 
 We explore two strategies:
