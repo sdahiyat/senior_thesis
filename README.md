@@ -22,9 +22,9 @@ How much confidence drops when these motifs are destroyed
 Why This Matters
 Our findings show that SpliceAI doesn't simply memorize GT/AG signals—it relies on a hierarchy of contextual features, combining:
 
-Global structure like codon usage and exon-intron patterns
+- Global structure like codon usage and exon-intron patterns
 
-Localized regulatory grammar like splicing enhancer motifs
+- Localized regulatory grammar like splicing enhancer motifs
 
 By systematically degrading or modifying these cues, we expose when and why SpliceAI fails, and what sequence logic it has learned to recognize.
 
