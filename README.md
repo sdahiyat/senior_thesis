@@ -6,9 +6,9 @@ We explore two strategies:
 1. Sequence Shuffling Experiments
 We generate modified transcriptomes by shuffling only exonic regions, using:
 
-Nucleotide Shuffling: Fully destroys local sequence context while preserving intron positions and splice junctions.
+- Nucleotide Shuffling: Fully destroys local sequence context while preserving intron positions and splice junctions.
 
-Codon Shuffling: Retains 3-mer composition to preserve global grammar like GC content and coding frame, but disrupts known splicing motifs.
+- Codon Shuffling: Retains 3-mer composition to preserve global grammar like GC content and coding frame, but disrupts known splicing motifs.
 
 These perturbations allow us to separate SpliceAI's reliance on global structure from local motifs.
 
