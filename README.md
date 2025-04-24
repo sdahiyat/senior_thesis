@@ -15,9 +15,9 @@ These perturbations allow us to separate SpliceAI's reliance on global structure
 2. Motif Perturbation Experiments
 We selectively shuffle or insert known RNA-binding protein motifs (e.g., SRSF1) near splice junctions to test:
 
-Whether SpliceAI uses these motifs to reinforce predictions
+- Whether SpliceAI uses these motifs to reinforce predictions
 
-How much confidence drops when these motifs are destroyed
+- How much confidence drops when these motifs are destroyed
 
 Why This Matters
 Our findings show that SpliceAI doesn't simply memorize GT/AG signals—it relies on a hierarchy of contextual features, combining:
