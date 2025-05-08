@@ -1,5 +1,5 @@
 ## 🧬 SpliceAI Interpretability via Transcriptome Perturbation
-This project investigates what SpliceAI learns about splicing by introducing controlled perturbations to transcript sequences. Rather than treating SpliceAI as a black box, we use synthetic transcriptomes to dissect the sequence-level signals that drive its predictions.
+This project investigates what SpliceAI learns about splicing by introducing controlled perturbations to transcript sequences. We use synthetic transcriptomes to dissect the sequence-level signals that drive its predictions.
 
 We explore two strategies:
 
@@ -26,5 +26,4 @@ Our findings show that SpliceAI doesn't simply memorize GT/AG signals—it relie
 
 - Localized grammar like splicing motifs
 
-By systematically degrading or modifying these cues, we expose when and why SpliceAI fails, and what sequence logic it has learned to recognize.
-
+By systematically degrading or modifying these cues, we can learn how much SpliceAI relies on specific features to make its predictions.
