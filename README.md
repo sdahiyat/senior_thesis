@@ -1,29 +1,42 @@
-## 🧬 SpliceAI Interpretability via Transcriptome Perturbation
-This project investigates what SpliceAI learns about splicing by introducing controlled perturbations to transcript sequences. We use synthetic transcriptomes to dissect the sequence-level signals that drive its predictions.
+# SpliceAI Interpretability via Transcriptome Perturbation
 
-We explore two strategies:
+This project investigates what the deep learning model [SpliceAI](https://github.com/Illumina/SpliceAI) learns about splicing by introducing controlled perturbations to transcript sequences. We use synthetic transcriptomes to dissect the sequence-level signals that drive its predictions.
 
-1. Sequence Shuffling Experiments
-We generate modified transcriptomes by shuffling only exonic regions, using:
+## Overview
 
-- Nucleotide Shuffling: Fully destroys local sequence context while preserving intron positions and splice junctions.
+We explore two classes of experiments:
 
-- Codon Shuffling: Retains 3-mer composition to preserve global grammar like GC content and coding frame, but disrupts known splicing motifs.
+### 1. Sequence Shuffling Experiments
 
-These perturbations allow us to separate SpliceAI's reliance on global structure from local motifs.
+We generate perturbed transcriptomes by modifying only **exonic regions**, preserving splice junctions and introns.
 
-2. Motif Perturbation Experiments
-We selectively shuffle or insert known RNA-binding protein motifs (e.g., SRSF1) near splice junctions to test:
+- **Nucleotide Shuffling**: Destroys local sequence context by fully randomizing each exon, while retaining exon-intron architecture.
+- **Codon Shuffling**: Shuffles codons (3-mers) instead of single nucleotides to preserve GC content and coding frame, while disrupting known motifs.
 
-- Whether SpliceAI uses these motifs to reinforce predictions
+These perturbations test whether SpliceAI's performance depends on:
+- Global structure (e.g., codon bias, exon length)
+- Local motif presence (e.g., splicing enhancers)
 
-- How much confidence drops when these motifs are destroyed
+### 2. Motif Perturbation Experiments
 
-## Why This Matters
-Our findings show that SpliceAI doesn't simply memorize GT/AG signals—it relies on a hierarchy of contextual features, combining:
+We selectively manipulate known RNA-binding protein motifs, such as **SRSF1**, using position weight matrices (PWMs). We test whether:
+- SpliceAI prediction scores drop when motifs are scrambled
+- Introducing motifs can boost splicing confidence at weak junctions
 
-- Global structure like codon usage and exon-intron patterns
+---
 
-- Localized grammar like splicing motifs
+## Reproducibility
 
-By systematically degrading or modifying these cues, we can learn how much SpliceAI relies on specific features to make its predictions.
+Scripts used to preprocess data, shuffle sequences, and run SpliceAI are included. This complements the formal reproducibility appendix in my report.
+
+### Requirements
+
+- Python ≥ 3.8
+- [SpliceAI](https://github.com/Illumina/SpliceAI)
+- Biopython, NumPy, Pandas
+- PyTorch (for GPU inference)
+
+To install dependencies:
+
+```bash
+pip install -r requirements.txt
